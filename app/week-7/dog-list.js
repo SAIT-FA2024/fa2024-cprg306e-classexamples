@@ -8,7 +8,7 @@ export default function DogList({listOfDogsArray}){
             <div className="grid grid-cols-2 gap-5">
                 {
                     listOfDogsArray.map(
-                        (dog) => ( <DogCard dogObj={dog} /> )
+                        (dog) => ( <DogCard dogObj={dog} key={dog.id} /> )
                     )
                 }
             </div>
