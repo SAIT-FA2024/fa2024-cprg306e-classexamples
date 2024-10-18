@@ -14,8 +14,11 @@ export default function AdoptionPage(){
         setListOfDogs( [...listOfDogs, newDogObj] );
     }
 
-    const removeDog = () => {
-        
+    const removeDog = (event) => {
+        let thisDogList = listOfDogs.filter(
+            (dog) => dog.id != event.target.getAttribute("data-dog-id")
+        );
+        setListOfDogs(thisDogList);
     }
 
     const [formOpen, setFormOpen] = useState(false);
@@ -32,7 +35,7 @@ export default function AdoptionPage(){
                     className="bg-blue-700 text-white text-3xl w-full h-full leading-none relative"
                 >+</button>
             </div>
-            <DogList listOfDogsArray={listOfDogs} />
+            <DogList listOfDogsArray={listOfDogs} removeDogFunc={removeDog} />
             
         </main>
     );
