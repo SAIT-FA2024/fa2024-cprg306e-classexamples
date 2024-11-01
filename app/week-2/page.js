@@ -7,7 +7,7 @@ export default function Page(){
         <main>
             <h1>Second Page</h1>
             <p>This is the second page of my React app!</p>
-            <MyFirstComponent />
+            <MyFirstComponent>Hello World</MyFirstComponent>
             <Link href="/">Home</Link>
             <Link href="../">Back</Link>
         </main>
