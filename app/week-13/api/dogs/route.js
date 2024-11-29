@@ -14,6 +14,7 @@ export async function GET(){
 export async function POST(request){
     const newDog = await request.json();
     // validate the incoming data
+    if(newDog.age) newDog.age = Number(newDog.age);
     const newDogSchema = z.object( {
         name: z.string(),
         age: z.number().min(1).max(30)
